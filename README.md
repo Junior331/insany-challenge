@@ -5,8 +5,9 @@
 - https://insany-challenge.vercel.app/
 
 #### O Produto
-![alt text](home-v2.png)
-![alt text](<Home (1).png>)
+![home-v2](https://github.com/user-attachments/assets/dc6567dd-473a-40bb-b4df-53ecc625280a)
+
+<img width="375" alt="Home (1)" src="https://github.com/user-attachments/assets/8182a1cc-39e1-4b89-8770-34e352246f62" />
 
 ## Principais Tecnologias utilizadas
 
