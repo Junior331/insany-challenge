@@ -1,7 +1,5 @@
 # insany-challenge
 
-# Portifolio Pablo Moureira
-
 ## App
 
 - https://insany-challenge.vercel.app/
