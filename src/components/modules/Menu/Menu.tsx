@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+import { props } from "./@types";
 import * as S from "./MenuStyled";
 import {
   routes,
@@ -8,8 +9,7 @@ import {
   fadeInVariant,
   mobileMenuVariant,
   hideNavItemsVariant,
-} from "./utils";
-import { props } from "./@types";
+} from "../Header/utils";
 
 export const Menu = ({ isMenuOpen, setIsMenuOpen }: props) => {
   return (

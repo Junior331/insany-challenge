@@ -50,6 +50,7 @@ export const MotionUl = styled(motion.ul)`
 export const MotionLi = styled(motion.li)`
   text-align: center;
 `;
+
 export const Button = styled(motion.button)`
   width: 100%;
   border: none;

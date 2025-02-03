@@ -48,10 +48,10 @@ yarn dev
 
   ## Elements
 
-     - [ ] Text  
+     - [X] Text  
      - [ ] Load  
      - [ ] Input 
-     - [ ] Title 
+     - [X] Title 
      - [X] Button
 
   ## Organism
@@ -60,8 +60,8 @@ yarn dev
 
   ## Modules
 
-     - [ ] Menu
-     - [ ] Header
+     - [X] Menu
+     - [X] Header
      - [X] Snackbar
 
 ### Descrição da estrutura do projeto
