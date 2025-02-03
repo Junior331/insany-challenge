@@ -1,9 +1,10 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
+
+import { Menu } from "../Menu";
+import { routes } from "./utils";
 import * as S from "./HeaderStyled";
 import { getImage } from "@/assets/images";
 import { Button, Text, Title } from "@/components/elements";
-import { routes } from "./utils";
-import { Menu } from "../Menu/Menu";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
