@@ -1,7 +1,8 @@
+import logo from "./logo.svg";
 import fallback from "./placeholder.svg";
 
-
 export const images = {
+  logo,
   fallback,
 };
 

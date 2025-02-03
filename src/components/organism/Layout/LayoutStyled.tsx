@@ -13,7 +13,6 @@ export const LayoutContent = styled(genericDiv)`
 `;
 
 export const Content = styled(genericDiv)`
-  padding: 0 20px;
   align-items: center;
   flex-direction: column;
 `;

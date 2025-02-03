@@ -1,6 +1,6 @@
 import { LayoutProps } from "./@types";
-import { Snackbar } from "@/components/modules";
 import { GlobalStyles } from "@/styles/globalStyled";
+import { Snackbar, Header } from "@/components/modules";
 import * as S from "./LayoutStyled";
 
 const Layout = ({ children }: LayoutProps) => {
@@ -10,6 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Snackbar />
       <S.LayoutContent>
         <S.Content>
+          <Header />
           {children}
         </S.Content>
       </S.LayoutContent>

@@ -5,6 +5,7 @@ export type colorShades = {
     default: string;
   };
   auxiliary: {
+    white: string;
     green: string;
     yellow: string;
   };

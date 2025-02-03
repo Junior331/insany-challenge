@@ -9,6 +9,7 @@ export const theme: DefaultTheme = {
         default: "#1D63FF",
       },
       auxiliary: {
+        white: "#FFFFFF",
         green: "#35D9A8",
         yellow: "#FFD76F",
       },
@@ -47,11 +48,11 @@ export const theme: DefaultTheme = {
   },
   typography: {
     fontSize: 1.6,
-    fontSizeBold: 3.5,
+    fontSizeBold: 2.4,
     fontSizeLight: 1.2,
     fontSizeMedium: 1.4,
     fontWeightBold: 700,
-    fontSizeRegular: 2.2,
+    fontSizeRegular: 1.8,
     htmlFontSize: "10px",
     fontWeightLight: 400,
     fontWeightRegular: 600,

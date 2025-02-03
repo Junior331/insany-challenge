@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body{
     scroll-behavior: smooth;
-    background-color: #FFFFFF;
+    background-color: #070514;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-size:${({ theme }) => theme.typography.htmlFontSize}; 
