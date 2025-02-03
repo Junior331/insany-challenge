@@ -103,7 +103,7 @@ export const ContentHero = styled(GenericContainer)`
 
     > p {
       margin: 0 auto;
-      font-size: 1.6rem;
+      font-size: ${({ theme }) => theme.typography.fontSize}rem;
     }
   }
 `;
@@ -179,25 +179,24 @@ export const SubmitButton = styled(Button)`
 `;
 
 export const PrivacyText = styled.p`
-  color: #666;
-  font-size: 14px;
   margin: 30px 0 0;
   max-width: 380px;
   text-align: start;
-
+  font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
+  color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_100};
   a {
-    color: #111;
     cursor: pointer;
     text-decoration: underline;
+    color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_100};
   }
 `;
 
 export const SecurityIndicator = styled.div`
+  gap: 8px;
   display: flex;
+  margin-top: 24px;
   align-items: center;
   justify-content: start;
-  gap: 8px;
-  color: #666;
-  font-size: 14px;
-  margin-top: 24px;
+  font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
+  color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_100};
 `;

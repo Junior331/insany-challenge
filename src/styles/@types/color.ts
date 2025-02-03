@@ -7,6 +7,7 @@ export type colorShades = {
   auxiliary: {
     white: string;
     green: string;
+    black: string;
     yellow: string;
   };
   neutrals: {

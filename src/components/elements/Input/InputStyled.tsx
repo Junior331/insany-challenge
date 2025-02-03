@@ -9,23 +9,23 @@ export const ContainerInput = styled.div`
   flex-direction: column;
 
   .text-error {
-    font-size: 14px;
     color: #fc311d;
     margin-left: 10px;
     margin-bottom: -5px;
+    font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
   }
 `;
 
 export const Input = styled.input`
   width: 100%;
   padding: 16px;
-  font-size: 16px;
   border-radius: 8px;
-  background: #f2f5fc;
   border-color: transparent;
+  font-size: ${({ theme }) => theme.typography.fontSize}rem;
+  background-color: ${({ theme }) => theme.palette.color.neutrals.light.gray_02};
 
-  &::placeholder {
-    color: #9ca3af;
+  &::placeholder { 
+    color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_50};
   }
 
   &:focus {

@@ -3,11 +3,8 @@ import styled from "styled-components";
 import { Title as TitleComponent } from "@/components/elements";
 
 export const NumberContainer = styled(motion.div)`
-  display: inline-block;
   overflow: hidden;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
+  display: inline-block;
 `;
 
 export const NumberItem = styled(motion.div)`

@@ -63,11 +63,11 @@ export const Snackbar = () => {
             animate="visible"
             exit="exit"
             style={{
-              color: "#fff",
               padding: "16px",
               minWidth: "280px",
               borderRadius: "4px",
               backgroundColor: severityColor,
+              color: theme.palette.color.auxiliary.white,
               boxShadow: "0px 3px 5px rgba(0, 0, 0, 0.2)",
             }}
           >

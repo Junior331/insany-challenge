@@ -9,6 +9,7 @@ export const theme: DefaultTheme = {
         default: "#1D63FF",
       },
       auxiliary: {
+        black: "#000000",
         white: "#FFFFFF",
         green: "#35D9A8",
         yellow: "#FFD76F",

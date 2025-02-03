@@ -25,8 +25,8 @@ export const MobileMenu = styled(motion.div)`
   position: fixed;
   align-items: center;
   flex-direction: column;
-  background-color: #000;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: ${({ theme }) => theme.palette.color.auxiliary.black};
 `;
 
 export const MotionButton = styled(motion.button)`
@@ -76,10 +76,10 @@ export const Button = styled(motion.button)`
 `;
 
 export const Link = styled.a`
-  color: #fff;
   cursor: pointer;
   position: relative;
   text-decoration: none;
+  color: ${({ theme }) => theme.palette.color.auxiliary.white};
   font-size: ${({ theme }) => theme.typography.fontSizeBold}rem;
   font-weight: ${({ theme }) => theme.typography.fontWeightLight};
 
@@ -95,7 +95,7 @@ export const Link = styled.a`
     height: 2px;
     bottom: -5px;
     position: absolute;
-    background-color: #fff;
     transition: width 0.3s ease, left 0.3s ease;
+    background-color: ${({ theme }) => theme.palette.color.auxiliary.white};
   }
 `;

@@ -23,10 +23,11 @@ export const Image = styled.img``;
 export const ContainerText = styled(ContainerGeneric)`
   > p {
     color: #cecdd9;
-    font-size: 25px;
+    font-size: ${({ theme }) => theme.typography.fontSizeBold + 0.1}rem;
   }
   > h2 {
-    color: #fff;
+    color: ${({ theme }) => theme.palette.color.auxiliary.white};
+
   }
 `;
 
@@ -43,10 +44,10 @@ export const ContainerLinks = styled(ContainerGeneric)`
 `;
 
 export const Link = styled.a`
-  color: #fff;
   cursor: pointer;
   position: relative;
   text-decoration: none;
+  color: ${({ theme }) => theme.palette.color.auxiliary.white};
   font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
   font-weight: ${({ theme }) => theme.typography.fontWeightLight};
 
@@ -62,16 +63,16 @@ export const Link = styled.a`
     height: 2px;
     bottom: -5px;
     position: absolute;
-    background-color: #fff;
     transition: width 0.3s ease, left 0.3s ease;
+    background-color: ${({ theme }) => theme.palette.color.auxiliary.white};
   }
 
   @media (max-width: 768px) {
-    color: #fff;
     font-size: ${({ theme }) => theme.typography.fontSizeBold}rem;
+    color: ${({ theme }) => theme.palette.color.auxiliary.white};
 
     &::after {
-      background-color: #fff;
+      background-color: ${({ theme }) => theme.palette.color.auxiliary.white};
     }
   }
 `;
