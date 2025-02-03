@@ -1,11 +1,25 @@
 "use client";
 
+import { useFormik } from "formik";
+
 import * as S from "./HeroStyled";
+import { schema } from "./schema";
 import { getIcons } from "@/assets/icons";
+import { maskCnpj, maskPhone } from "@/utils/utils";
+import { bigNumbers, initialValues } from "./utils";
 import { Header, NumberTicker } from "@/components/modules";
-import { bigNumbers } from "./utils";
+import { Input, Radio, Text, Title } from "@/components/elements";
 
 export const Hero = () => {
+  const formik = useFormik({
+    initialValues: initialValues,
+    onSubmit: async (values) => {
+      console.log("values ::", values);
+    },
+    validationSchema: schema,
+  });
+
+  const { values, errors, touched, handleSubmit, handleChange } = formik;
   return (
     <S.Section id="Hero">
       <Header />
@@ -38,7 +52,89 @@ export const Hero = () => {
           </S.ContentHero>
         </S.Content>
 
-        <S.ContainerForm></S.ContainerForm>
+        <S.ContainerForm>
+          <Text>Faça parte da revolução digital!</Text>
+          <Title>Cadastre-se e faça parte do lançamento oficial</Title>
+
+          <form onSubmit={handleSubmit}>
+            <S.RadioGroup>
+              <Radio
+                type="radio"
+                name="type"
+                label="Para você"
+                checked={values.formType === "personal"}
+                onChange={() => formik.setFieldValue("formType", "personal")}
+              />
+              <Radio
+                type="radio"
+                name="type"
+                label="Para empresa"
+                checked={values.formType === "business"}
+                onChange={() => formik.setFieldValue("formType", "business")}
+              />
+            </S.RadioGroup>
+
+            {values.formType === "business" ? (
+              <Input
+                type="text"
+                name="cnpj"
+                maxLength={14}
+                placeholder="CNPJ"
+                onChange={handleChange}
+                helperText={errors.cnpj}
+                value={maskCnpj(values.cnpj)}
+                error={touched.cnpj && Boolean(errors.cnpj)}
+              />
+            ) : (
+              <Input
+                type="text"
+                name="name"
+                placeholder="Nome"
+                value={values.name}
+                onChange={handleChange}
+                helperText={errors.name}
+                error={touched.name && Boolean(errors.name)}
+              />
+            )}
+
+            <Input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              value={values.email}
+              onChange={handleChange}
+              helperText={errors.email}
+              error={touched.email && Boolean(errors.email)}
+            />
+
+            <Input
+              type="tel"
+              name="phone"
+              maxLength={15}
+              placeholder="Celular"
+              onChange={handleChange}
+              helperText={errors.phone}
+              value={maskPhone(values.phone)}
+              error={touched.phone && Boolean(errors.phone)}
+            />
+
+            <S.SubmitButton type="submit" size="100%">
+              Quero ser cliente
+            </S.SubmitButton>
+
+            <S.PrivacyText>
+              Ao enviar seus dados, você autoriza que o SmartMoney entre em
+              contato e declara estar ciente da <a>Política de Privacidade</a>
+            </S.PrivacyText>
+
+            <S.Divider className="divider" />
+
+            <S.SecurityIndicator>
+              <S.Icon src={getIcons("safe").src} alt="Icon safe" />
+              Seus dados estão seguros
+            </S.SecurityIndicator>
+          </form>
+        </S.ContainerForm>
       </S.Container>
     </S.Section>
   );

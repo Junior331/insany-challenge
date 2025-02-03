@@ -69,6 +69,10 @@ export const Button = styled(motion.button)`
   font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
   background: ${({ theme }) => theme.palette.color.auxiliary.white};
   color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_700};
+
+  &:hover {
+    background-color: #e8ecf5;
+  }
 `;
 
 export const Link = styled.a`

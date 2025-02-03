@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { Button as ButtonComponent } from "@/components/elements";
 
 export const ContainerGeneric = styled.div`
   display: flex;
@@ -73,5 +73,14 @@ export const Link = styled.a`
     &::after {
       background-color: #fff;
     }
+  }
+`;
+
+export const Button = styled(ButtonComponent)`
+  background: ${({ theme }) => theme.palette.color.auxiliary.white};
+  color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_700};
+
+  &:hover {
+    background-color: #e8ecf5;
   }
 `;

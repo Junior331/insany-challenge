@@ -15,3 +15,11 @@ export const bigNumbers = [
     label: "Faturamento 2021",
   },
 ];
+
+export const initialValues = {
+  name: "",
+  cnpj: "",
+  email: "",
+  phone: "",
+  formType: "personal",
+};

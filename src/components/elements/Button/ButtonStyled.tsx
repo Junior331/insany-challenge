@@ -11,9 +11,14 @@ export const Button = styled.button<StyledButtonProps>`
   justify-content: center;
   transition: 0.2s color ease;
   width: ${({ size }) => size || "max-content"};
+  color: ${({ theme }) => theme.palette.color.auxiliary.white};
   cursor: ${({ disabled }) => (disabled ? "no-drop" : "pointer")};
   font-size: ${({ theme }) => theme.typography.fontSize - 0.2}rem;
-  background: ${({ theme }) => theme.palette.color.auxiliary.white};
+  background: ${({ theme }) => theme.palette.color.brand.default};
   font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
-  color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_700};
+
+  &:hover {
+    /* background: #0043cc; */
+    background: ${({ theme }) => theme.palette.color.brand.dark};
+  }
 `;

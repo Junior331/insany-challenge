@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import {
+  Button,
   Text as TextComponent,
   Title as TitleComponent,
 } from "@/components/elements";
@@ -137,9 +138,66 @@ export const BigNumber = styled(GenericContainer)`
 export const ContainerForm = styled(GenericContainer)`
   z-index: 10;
   width: 488px;
-  height: 644px;
+  height: auto;
+  min-height: 644px;
   border-radius: 6px;
   margin-bottom: -60px;
+  flex-direction: column;
+  padding: 40px 43px 28px 44px;
   box-shadow: 0px 30px 50px -10px rgba(76, 74, 94, 0.2);
   background: ${({ theme }) => theme.palette.color.auxiliary.white};
+
+  > p {
+    margin-bottom: 10px;
+    font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
+    color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_50};
+  }
+
+  > form {
+    margin-top: 24px;
+
+    .divider {
+      width: 100%;
+      height: 3px;
+      opacity: 0.4;
+      margin: 27px auto;
+      background-color: ${({ theme }) =>
+        theme.palette.color.neutrals.light.gray_01};
+    }
+  }
+`;
+
+export const RadioGroup = styled.div`
+  gap: 24px;
+  display: flex;
+  margin-bottom: 31px;
+`;
+
+export const SubmitButton = styled(Button)`
+  height: 56px;
+  margin-top: 8px;
+`;
+
+export const PrivacyText = styled.p`
+  color: #666;
+  font-size: 14px;
+  margin: 30px 0 0;
+  max-width: 380px;
+  text-align: start;
+
+  a {
+    color: #111;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+`;
+
+export const SecurityIndicator = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+  margin-top: 24px;
 `;

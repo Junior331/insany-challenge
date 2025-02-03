@@ -18,3 +18,15 @@ export const formatNumberBR = (num: number): string => {
   if (num >= 1e3) return `${Math.floor(num / 1e3)} mil`;
   return num.toString();
 };
+
+export const maskCnpj = (value: string) => {
+  value = value.replace(/[^\d]/g, "");
+
+  return value.replace(
+    /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,
+    "$1.$2.$3/$4-$5"
+  );
+};
+
+export const maskPhone = (value: string) =>
+  value.replace(/(\d{2})(\d{5})(\d{4})/g, "($1) $2-$3");

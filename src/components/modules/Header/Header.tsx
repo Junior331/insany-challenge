@@ -31,7 +31,7 @@ export const Header = () => {
             </S.Link>
           ))}
         </S.ContainerLinks>
-        <Button>Cadastre-se</Button>
+        <S.Button>Cadastre-se</S.Button>
       </S.ContainerNav>
     </S.Container>
   );
