@@ -1,10 +1,16 @@
 import logo from "./logo.svg";
-import bgHome from "./bg_home.png";
+import avatar from "./avatar.svg";
+import bgHome from "./bg_home.svg";
+import bgCard from "./bg_card.svg";
+import circles from "./circles.svg";
 import fallback from "./placeholder.svg";
 
 export const images = {
   logo,
+  avatar,
+  bgCard,
   bgHome,
+  circles,
   fallback,
 };
 

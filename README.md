@@ -43,7 +43,7 @@ yarn dev
      - [ ] Careers
      - [ ] Contact
      - [ ] Support
-     - [ ] Solutions
+     - [X] Solutions
 
   ### Components
 

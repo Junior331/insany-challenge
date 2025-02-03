@@ -8,10 +8,14 @@ export default function Home() {
     <Layout>
       <Hero />
 
-      <About />
       <Solutions />
+
+      <About />
+      
       <Support />
+      
       <Contact />
+      
       <Careers />
     </Layout>
   );
