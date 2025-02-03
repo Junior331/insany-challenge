@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 
 import { props } from "./@types";
@@ -25,29 +27,28 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: props) => {
           fill="#fff"
           stroke="#fff"
           viewBox="0 0 24 24"
-          className="cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          <g id="SVGRepo_bgCarrier" stroke-width="0" />
+          <g id="SVGRepo_bgCarrier" strokeWidth="0" />
           <g
             id="SVGRepo_tracerCarrier"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
 
           <g id="SVGRepo_iconCarrier">
             <g
               id="Page-1"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <g id="Menu">
                 <rect
                   id="Rectangle"
-                  fill-rule="nonzero"
+                  fillRule="nonzero"
                   x="0"
                   y="0"
                   width="24"
@@ -60,8 +61,8 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: props) => {
                   y2="7"
                   id="Path"
                   stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 ></line>
                 <line
                   x1="5"
@@ -70,8 +71,8 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: props) => {
                   y2="17"
                   id="Path"
                   stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 ></line>
                 <line
                   x1="5"
@@ -80,8 +81,8 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: props) => {
                   y2="12"
                   id="Path"
                   stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 ></line>
               </g>
             </g>
@@ -99,22 +100,21 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: props) => {
             width="25px"
             height="25px"
             viewBox="0 0 8 8"
-            className="cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               d="M1 6.66L6.66 1"
               stroke="white"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M6.66 6.66L1 1"
               stroke="white"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </S.MotionButton>

@@ -1,3 +1,5 @@
+"use client";
+
 import { Props } from './@types';
 import * as S from './ButtonStyled';
 

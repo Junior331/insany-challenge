@@ -88,7 +88,7 @@ export const fadeInTransition = { duration: 1 };
 export const routes = [
   {
     id: 1,
-    path: "#WhoWeAre",
+    path: "#About",
     label: "Quem somos",
   },
   {

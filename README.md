@@ -38,10 +38,11 @@ yarn dev
 
   ### Pages
 
+     - [X] Hero
+     - [ ] About
      - [ ] Careers
      - [ ] Contact
      - [ ] Support
-     - [ ] WhoWeAre
      - [ ] Solutions
 
   ### Components
@@ -63,6 +64,7 @@ yarn dev
      - [X] Menu
      - [X] Header
      - [X] Snackbar
+     - [X] NumberTicker
 
 ### Descrição da estrutura do projeto
 
@@ -109,6 +111,7 @@ yarn dev
     │   │   │   │   ├── Menu
     │   │   │   │   ├── Header
     │   │   │   │   ├── Snackbar
+    │   │   │   │   ├── NumberTicker
     │   │   │   │   └── index.ts
     │   │   │   ├── organism/
     │   │   │   │   ├── Layout
@@ -124,7 +127,8 @@ yarn dev
     │   │   │   │   └── index.ts
     │   │   │   └── services.ts
     │   │   ├── pages/
-    │   │   │   ├── WhoWeAre
+    │   │   │   ├── Hero
+    │   │   │   ├── About
     │   │   │   ├── Careers
     │   │   │   ├── Contact
     │   │   │   ├── Support

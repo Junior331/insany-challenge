@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 import { Menu } from "../Menu";
@@ -24,7 +26,9 @@ export const Header = () => {
       <S.ContainerNav>
         <S.ContainerLinks>
           {routes.map((item) => (
-            <S.Link key={item.id}>{item.label}</S.Link>
+            <S.Link href={item.path} key={item.id}>
+              {item.label}
+            </S.Link>
           ))}
         </S.ContainerLinks>
         <Button>Cadastre-se</Button>

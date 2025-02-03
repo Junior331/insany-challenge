@@ -1,3 +1,5 @@
+"use client";
+
 import { TitleProps } from "./@types";
 import * as S from "./TitleStyled";
 

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { StyledButtonProps } from "./@types";
 
 export const Button = styled.button<StyledButtonProps>`

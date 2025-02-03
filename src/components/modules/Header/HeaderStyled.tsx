@@ -9,18 +9,9 @@ export const ContainerGeneric = styled.div`
 export const Container = styled(ContainerGeneric)`
   width: 100%;
   height: 80px;
-  padding: 0 100px;
   position: relative;
+  margin-bottom: 30px;
   justify-content: space-between;
-  box-shadow: 0px 10px 30px 0px rgba(137, 133, 188, 0.06);
-
-  @media (max-width: 935px) {
-    padding: 0 3%;
-  }
-  
-  @media (max-width: 768px) {
-    padding: 0 30px;
-  }
 `;
 
 export const ContainerLogo = styled(ContainerGeneric)`

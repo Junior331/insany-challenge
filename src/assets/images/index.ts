@@ -1,8 +1,10 @@
 import logo from "./logo.svg";
+import bgHome from "./bg_home.png";
 import fallback from "./placeholder.svg";
 
 export const images = {
   logo,
+  bgHome,
   fallback,
 };
 

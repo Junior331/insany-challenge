@@ -26,11 +26,12 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body{
     scroll-behavior: smooth;
-    background-color: #070514;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-size:${({ theme }) => theme.typography.htmlFontSize}; 
     color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_800};
+    background-color: ${({ theme }) =>
+      theme.palette.color.neutrals.dark.dark_800};
   }
   
   a {
