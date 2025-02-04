@@ -38,12 +38,8 @@ yarn dev
 
   ### Pages
 
-     - [X] Hero
-     - [ ] About
-     - [ ] Careers
-     - [ ] Contact
-     - [ ] Support
-     - [X] Solutions
+     - [ ] Home
+     - [ ] Details
 
   ### Components
 
@@ -58,7 +54,11 @@ yarn dev
 
   ## Organism
 
+  - [X] FAQ
+  - [X] Hero
+  - [X] Footer
   - [X] Layout
+  - [X] Solutions
 
   ## Modules
 
@@ -105,6 +105,7 @@ yarn dev
     │   │   │   │   ├── Text
     │   │   │   │   ├── Load
     │   │   │   │   ├── Input
+    │   │   │   │   ├── Radio
     │   │   │   │   ├── Title
     │   │   │   │   ├── Button
     │   │   │   │   └── index.ts
@@ -116,6 +117,12 @@ yarn dev
     │   │   │   │   └── index.ts
     │   │   │   ├── organism/
     │   │   │   │   ├── Layout
+    │   │   │   │   ├── Sections/
+    │   │   │   │   │   ├── FAQ/
+    │   │   │   │   │   ├── Hero
+    │   │   │   │   │   ├── Footer
+    │   │   │   │   │   ├── Solutions
+    │   │   │   │   │   └── index.ts
     │   │   │   │   └── index.ts
     │   │   ├── hooks/
     │   │   ├── contexts/
@@ -128,12 +135,8 @@ yarn dev
     │   │   │   │   └── index.ts
     │   │   │   └── services.ts
     │   │   ├── pages/
-    │   │   │   ├── Hero
-    │   │   │   ├── About
-    │   │   │   ├── Careers
-    │   │   │   ├── Contact
-    │   │   │   ├── Support
-    │   │   │   └── Solutions
+    │   │   │   ├── Home
+    │   │   │   └── Details
     │   │   ├── utils/
     │   │   │   ├── utils.ts
     │   │   │   ├── types.ts
