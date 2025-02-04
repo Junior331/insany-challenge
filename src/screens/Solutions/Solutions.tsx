@@ -4,6 +4,7 @@ import { getIcons } from "@/assets/icons";
 import * as S from "./SolutionsStyled";
 import { topics, features } from "./utils";
 import { getImage } from "@/assets/images";
+import { useEffect } from "react";
 
 export const Solutions = () => {
   return (

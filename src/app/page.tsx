@@ -1,7 +1,8 @@
 "use client";
 
 import { Layout } from "@/components/organism";
-import { About, Careers, Contact, Hero, Solutions, Support } from "@/screens";
+import { About, Careers, Contact, FAQ, Hero, Solutions, Support } from "@/screens";
+import FAQSection from "@/screens/FAQSection/faq-section";
 
 export default function Home() {
   return (
@@ -10,13 +11,17 @@ export default function Home() {
 
       <Solutions />
 
-      <About />
+      {/* <About />
       
       <Support />
       
-      <Contact />
+      <Contact /> */}
       
-      <Careers />
+      <FAQ />
+
+      {/* <FAQSection /> */}
+
+      {/* <Careers /> */}
     </Layout>
   );
 }
