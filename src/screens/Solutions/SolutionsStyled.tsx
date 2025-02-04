@@ -261,6 +261,6 @@ export const Image = styled.img`
 
 export const Circles = styled.img`
   right: 30px;
-  bottom: 5px;
+  bottom: 10px;
   position: absolute;
 `;
