@@ -7,6 +7,4 @@ export type props = {
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>
 };
 
-export type styledProps = {
-  isOpen: boolean;
-};
+

@@ -8,13 +8,18 @@ import close from "./close.svg";
 import check from "./check.svg";
 import chart from "./chart.svg";
 import phone from "./phone.svg";
+import globlo from "./globlo.svg";
+import twitch from "./twitch.svg";
 import physcis from "./physcis.svg";
+import facebook from "./facebook.svg";
+import linkedin from "./linkedin.svg";
 import barChart from "./bar_chart.svg";
+import instagram from "./instagram.svg";
+import emailFast from "./email_fast.svg";
 import rectangles from "./rectangles.svg";
 import interactive from "./interactive.svg";
 import fallback from "../images/placeholder.svg";
 import wirelessCharging from "./wireless_charging.svg";
-
 
 export const icons = {
   zap,
@@ -27,9 +32,15 @@ export const icons = {
   check,
   chart,
   close,
+  twitch,
+  globlo,
   physcis,
+  facebook,
+  linkedin,
   barChart,
   fallback,
+  instagram,
+  emailFast,
   rectangles,
   interactive,
   wirelessCharging,

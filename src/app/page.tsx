@@ -1,27 +1,18 @@
 "use client";
 
-import { Layout } from "@/components/organism";
-import { About, Careers, Contact, FAQ, Hero, Solutions, Support } from "@/screens";
-import FAQSection from "@/screens/FAQSection/faq-section";
+import { Layout, Sections } from "@/components/organism";
 
 export default function Home() {
   return (
     <Layout>
-      <Hero />
+      <Sections.Hero />
 
-      <Solutions />
+      <Sections.Solutions />
 
-      {/* <About />
-      
-      <Support />
-      
-      <Contact /> */}
-      
-      <FAQ />
+      <Sections.FAQ />
 
-      {/* <FAQSection /> */}
+      <Sections.Footer />
 
-      {/* <Careers /> */}
     </Layout>
   );
 }

@@ -3,6 +3,7 @@ import avatar from "./avatar.svg";
 import bgHome from "./bg_home.svg";
 import bgCard from "./bg_card.svg";
 import circles from "./circles.svg";
+import bgFooter from "./bg_footer.svg";
 import fallback from "./placeholder.svg";
 
 export const images = {
@@ -12,6 +13,7 @@ export const images = {
   bgHome,
   circles,
   fallback,
+  bgFooter,
 };
 
 type IImage = keyof typeof images;

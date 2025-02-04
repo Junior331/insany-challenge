@@ -1,3 +1,4 @@
 import { Layout } from "./Layout";
+import * as Sections from "./Sections";
 
-export { Layout };
+export { Layout, Sections };
