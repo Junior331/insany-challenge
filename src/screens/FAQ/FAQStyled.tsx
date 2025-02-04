@@ -29,9 +29,9 @@ export const Container = styled.div`
   place-items: flex-start end;
   grid-template-columns: 411px 1fr;
 
-  @media (max-width: 968px) {
+  @media (max-width: 1025px) {
     gap: 40px;
-    padding: 120px 30px;
+    padding: 64px 30px;
     grid-template-columns: 1fr;
   }
 `;
@@ -39,6 +39,14 @@ export const Container = styled.div`
 export const Content = styled(GenericContainer)`
   gap: 16px;
   flex-direction: column;
+
+  @media (max-width: 1025px) {
+    align-items: center;
+    > h2,
+    p {
+      text-align: center;
+    }
+  }
 `;
 
 export const Text = styled(TextComponent)<styledProps>`
@@ -67,6 +75,11 @@ export const ContainerCards = styled(GenericContainer)`
 export const ContactCard = styled(GenericContainer)`
   gap: 32px;
   align-items: center;
+
+  @media (max-width: 1025px) {
+    margin: 0 auto;
+    max-width: 350px;
+  }
 `;
 export const ContactInfo = styled(GenericContainer)`
   gap: 4px;
@@ -79,6 +92,10 @@ export const AccordionContainer = styled.div`
   display: flex;
   max-width: 696px;
   flex-direction: column;
+  
+  @media (max-width: 1025px) {
+    max-width: 100%;
+  }
 `;
 
 export const AccordionItem = styled.div`
