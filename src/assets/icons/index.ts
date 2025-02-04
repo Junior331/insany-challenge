@@ -8,6 +8,7 @@ import close from "./close.svg";
 import check from "./check.svg";
 import chart from "./chart.svg";
 import phone from "./phone.svg";
+import dolar from "./dolar.svg";
 import globlo from "./globlo.svg";
 import twitch from "./twitch.svg";
 import physcis from "./physcis.svg";
@@ -20,6 +21,7 @@ import rectangles from "./rectangles.svg";
 import interactive from "./interactive.svg";
 import fallback from "../images/placeholder.svg";
 import wirelessCharging from "./wireless_charging.svg";
+import chatNotification from "./chat_notification.svg";
 
 export const icons = {
   zap,
@@ -28,6 +30,7 @@ export const icons = {
   plus,
   safe,
   menu,
+  dolar,
   phone,
   check,
   chart,
@@ -43,6 +46,7 @@ export const icons = {
   emailFast,
   rectangles,
   interactive,
+  chatNotification,
   wirelessCharging,
 };
 type IIcons = keyof typeof icons;

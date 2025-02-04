@@ -18,7 +18,6 @@ export const Button = styled.button<StyledButtonProps>`
   font-weight: ${({ theme }) => theme.typography.fontWeightRegular};
 
   &:hover {
-    /* background: #0043cc; */
     background: ${({ theme }) => theme.palette.color.brand.dark};
   }
 `;

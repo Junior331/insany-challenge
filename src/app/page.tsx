@@ -9,9 +9,12 @@ export default function Home() {
 
       <Sections.Solutions />
 
+      <Sections.Contact />
+      
       <Sections.FAQ />
 
       <Sections.Footer />
+
 
     </Layout>
   );
