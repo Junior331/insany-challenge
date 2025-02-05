@@ -17,9 +17,13 @@ import linkedin from "./linkedin.svg";
 import barChart from "./bar_chart.svg";
 import instagram from "./instagram.svg";
 import emailFast from "./email_fast.svg";
+import arrowLeft from "./arrow_left.svg";
 import rectangles from "./rectangles.svg";
+import arrowRight from "./arrow_right.svg";
 import interactive from "./interactive.svg";
 import fallback from "../images/placeholder.svg";
+import arrowLeftLine from "./arrow_left_line.svg";
+import arrowRightLine from "./arrow_right_Line.svg";
 import wirelessCharging from "./wireless_charging.svg";
 import chatNotification from "./chat_notification.svg";
 
@@ -44,11 +48,16 @@ export const icons = {
   fallback,
   instagram,
   emailFast,
+  arrowLeft,
+  arrowRight,
   rectangles,
   interactive,
+  arrowLeftLine,
+  arrowRightLine,
   chatNotification,
   wirelessCharging,
 };
+
 type IIcons = keyof typeof icons;
 
 export const getIcons = (id: IIcons) => {

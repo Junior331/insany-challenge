@@ -34,7 +34,7 @@ export const ContainerText = styled(ContainerGeneric)`
 export const ContainerNav = styled(ContainerGeneric)`
   gap: 30px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     display: none;
   }
 `;
@@ -67,7 +67,7 @@ export const Link = styled.a`
     background-color: ${({ theme }) => theme.palette.color.auxiliary.white};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     font-size: ${({ theme }) => theme.typography.fontSizeBold}rem;
     color: ${({ theme }) => theme.palette.color.auxiliary.white};
 

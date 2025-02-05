@@ -24,7 +24,7 @@ export const Section = styled.section`
   justify-content: space-evenly;
   background-color: ${({ theme }) => theme.palette.color.auxiliary.white};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     align-items: center;
     flex-direction: column;
   }
@@ -96,7 +96,7 @@ export const Divider = styled.div`
   background-color: ${({ theme }) =>
     theme.palette.color.neutrals.light.gray_01};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     width: 100%;
     height: 4px;
   }

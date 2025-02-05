@@ -55,8 +55,8 @@ export const Solutions = () => {
 
             <S.Image
               loading="lazy"
-              src={getImage("avatar").src}
               alt="Image avatar"
+              src={getImage("avatar").src}
             />
             <S.Circles
               loading="lazy"

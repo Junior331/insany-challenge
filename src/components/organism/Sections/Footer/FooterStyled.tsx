@@ -26,7 +26,7 @@ export const Container = styled.footer`
   background-repeat: no-repeat;
   background-image: url(${getImage("bgFooter").src});
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     padding: 63px 30px 32px;
   }
 `;
@@ -36,7 +36,7 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     gap: 48px;
     grid-template-columns: 1fr;
   }
@@ -49,11 +49,10 @@ export const NewsletterSection = styled.div`
 
   @media (max-width: 768px) {
     align-items: center;
-  }
-
-  > h2,
-  p {
-    text-align: center;
+    > h2,
+    p {
+      text-align: center;
+    }
   }
 `;
 
@@ -85,7 +84,7 @@ export const Form = styled.form`
   align-items: center;
   background-color: ${({ theme }) => theme.palette.color.auxiliary.white};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     padding: 0;
     flex-direction: column;
     background-color: transparent;
@@ -107,7 +106,7 @@ export const Input = styled.input`
     color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_50};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     width: 100%;
     padding: 12px 16px;
     border-radius: 6px;
@@ -118,7 +117,7 @@ export const Input = styled.input`
 export const Button = styled(ButtonComponent)`
   padding: 12px 24px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     width: 100%;
     height: 56px;
   }
@@ -170,7 +169,7 @@ export const LinksList = styled.ul`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     gap: 32px;
     flex-wrap: wrap;
     flex-direction: row;
@@ -190,7 +189,7 @@ export const SocialList = styled(LinksList)`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     li {
       flex: initial;
       width: max-content;
@@ -209,7 +208,7 @@ export const Bottom = styled.div`
   justify-content: space-between;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     gap: 24px;
     flex-wrap: wrap;
   }

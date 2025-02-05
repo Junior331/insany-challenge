@@ -9,12 +9,15 @@ export default function Home() {
 
       <Sections.Solutions />
 
+      <Sections.Blog />
+
+      <Sections.Benefits />
+      
       <Sections.Contact />
       
       <Sections.FAQ />
 
       <Sections.Footer />
-
 
     </Layout>
   );

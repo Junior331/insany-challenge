@@ -52,6 +52,11 @@ export const Content = styled(GenericContainer)`
 
   @media (max-width: 1173px) {
     align-items: center;
+
+    > h2 {
+      font-size: 2.3rem;
+      text-align: center;
+    }
   }
 `;
 

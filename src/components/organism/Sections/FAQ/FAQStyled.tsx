@@ -46,6 +46,10 @@ export const Content = styled(GenericContainer)`
     p {
       text-align: center;
     }
+
+    > h2:nth-child(2) {
+      font-size: 2.3rem;
+    }
   }
 `;
 

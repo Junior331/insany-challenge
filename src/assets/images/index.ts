@@ -1,19 +1,29 @@
+import db from "./db.svg";
 import logo from "./logo.svg";
 import avatar from "./avatar.svg";
 import bgHome from "./bg_home.svg";
 import bgCard from "./bg_card.svg";
 import circles from "./circles.svg";
+import bgLines from "./bg_lines.svg";
+import abstract from "./abstract.svg";
 import bgFooter from "./bg_footer.svg";
 import fallback from "./placeholder.svg";
+import avatarDetail from "./avatar_detail.svg";
+import avatarTechnologies from "./avatar_technologies.svg";
 
 export const images = {
+  db,
   logo,
   avatar,
   bgCard,
   bgHome,
+  bgLines,
   circles,
   fallback,
   bgFooter,
+  abstract,
+  avatarDetail,
+  avatarTechnologies,
 };
 
 type IImage = keyof typeof images;

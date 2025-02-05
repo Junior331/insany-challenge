@@ -6,7 +6,7 @@ export const MotionNav = styled(motion.nav)`
   display: none;
   justify-content: space-between;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     display: flex;
   }
 `;

@@ -26,11 +26,7 @@ export const Section = styled.section`
   background-repeat: no-repeat;
   background-image: url(${getImage("bgHome").src});
 
-  @media (max-width: 935px) {
-    padding: 0 3%;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     padding: 0 30px;
     margin-bottom: 0px;
   }
@@ -39,11 +35,11 @@ export const Section = styled.section`
 export const Container = styled.div`
   gap: 64px;
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-between;
 
-  @media (max-width: 1385px) {
+  @media (max-width: 1173px) {
+    flex-wrap: wrap;
     justify-content: center;
   }
 `;
@@ -56,7 +52,7 @@ export const Content = styled(GenericContainer)`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     align-items: center;
   }
 `;
@@ -95,7 +91,7 @@ export const ContentHero = styled(GenericContainer)`
     margin-bottom: 13px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     > h2,
     p {
       text-align: center;
@@ -114,7 +110,7 @@ export const Divider = styled(GenericContainer)`
   margin: 56px 0;
   background-color: ${({ theme }) => theme.palette.color.brand.default};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     margin: 56px auto;
   }
 `;
@@ -130,7 +126,7 @@ export const BigNumber = styled(GenericContainer)`
   flex: 1 0 200px;
   flex-direction: column;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1173px) {
     align-items: center;
   }
 `;
