@@ -31,15 +31,53 @@ export const maskCnpj = (value: string) => {
 export const maskPhone = (value: string) =>
   value.replace(/(\d{2})(\d{5})(\d{4})/g, "($1) $2-$3");
 
-export const formatDate = (dateString: string): string => {
+export const formatDate = (
+  dateString: string,
+  format: "MMMM YYYY" | "D de MMM YYYY" = "MMMM YYYY"
+): string => {
   const date = new Date(dateString);
+
   const monthNames = [
-    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+    "Janeiro",
+    "Fevereiro",
+    "Março",
+    "Abril",
+    "Maio",
+    "Junho",
+    "Julho",
+    "Agosto",
+    "Setembro",
+    "Outubro",
+    "Novembro",
+    "Dezembro",
   ];
 
+  const shortMonthNames = [
+    "jan",
+    "fev",
+    "mar",
+    "abr",
+    "mai",
+    "jun",
+    "jul",
+    "ago",
+    "set",
+    "out",
+    "nov",
+    "dez",
+  ];
+
+  const day = date.getDate();
   const month = monthNames[date.getMonth()];
+  const shortMonth = shortMonthNames[date.getMonth()];
   const year = date.getFullYear();
 
-  return `${month} ${year}`;
+  switch (format) {
+    case "MMMM YYYY":
+      return `${month} ${year}`;
+    case "D de MMM YYYY":
+      return `${day} de ${shortMonth} ${year}`;
+    default:
+      return `${month} ${year}`;
+  }
 };

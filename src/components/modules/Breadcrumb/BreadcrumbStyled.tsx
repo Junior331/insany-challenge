@@ -16,6 +16,7 @@ export const BreadcrumbContainer = styled.nav`
 
   @media (max-width: 1173px) {
     max-width: 100%;
+    padding: 12px 0px;
     justify-content: flex-start;
   }
 `;
@@ -48,10 +49,15 @@ export const Separator = styled.span`
 
 export const CurrentPage = styled.span`
   margin-left: 8px;
-  max-width: 300px;
+  max-width: 360px;
   overflow: hidden;
   white-space: nowrap;
+  display: inline-block;
   text-overflow: ellipsis;
   color: ${({ theme }) => theme.palette.color.brand.dark};
   font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
+
+  @media (max-width: 1173px) {
+    max-width: 50%;
+  }
 `;

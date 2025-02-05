@@ -1,6 +1,6 @@
-export const breadcrumbItems = [
+export const breadcrumbItems = (title: string) => [
   { label: "artigos", href: "/" },
-  { label: "Lorem ipsum dolor sit amet, conse...", href: "#" },
+  { label: title, href: "#" },
 ];
 
 export const texts = [

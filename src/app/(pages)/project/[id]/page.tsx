@@ -1,84 +1,112 @@
 "use client";
+import { useParams } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
 
 import * as S from "./styled";
+import { breadcrumbItems } from "./utils";
 import { getImage } from "@/assets/images";
-import { breadcrumbItems, texts } from "./utils";
+import { Post, PostsContext } from "@/contexts/posts";
 import { Layout, Sections } from "@/components/organism";
 import { Breadcrumb, Header } from "@/components/modules";
+import { formatDate } from "@/utils/utils";
 
 export default function Project() {
+  const { posts } = useContext(PostsContext);
+  const { id } = useParams<{ id: string }>();
+  const [postSelected, setPostSelected] = useState<Post>();
+
+  // const handleFindPost = () => {
+  //   const post = posts.filter((item) => item.id === parseFloat(id))[0];
+  //   setPostSelected(post);
+  // };
+
+  // useEffect(() => {
+  //   handleFindPost();
+  // }, [id]);
+
+  useEffect(() => {
+    const fetchPageContent = async () => { 
+      // 36 a 28
+      try {
+        const response = await fetch(
+          "https://devblog.insanydesign.com/wp-json/wp/v2/posts/28"
+        );
+        const data = await response.json();
+
+        console.log("data ::", data);
+
+        const authorUrl = data._links.author?.[0]?.href;
+        let details_author = null;
+
+        if (data) {
+          try {
+            const authorResponse = await fetch(authorUrl);
+            if (authorResponse.ok) {
+              details_author = await authorResponse.json();
+            }
+          } catch (error) {
+            console.error(
+              `Erro ao buscar detalhes do autor para ${authorUrl}:`,
+              error
+            );
+          }
+        }
+        const postsWithAuthorDetails = { ...data, details_author };
+
+        if (postsWithAuthorDetails) {
+          setPostSelected(postsWithAuthorDetails);
+        }
+      } catch (error) {
+        console.error("Erro ao carregar a página:", error);
+      }
+    };
+
+    fetchPageContent();
+  }, []);
+
   return (
     <Layout>
       <S.Container>
         <Header />
         <S.Content>
-          <Breadcrumb items={breadcrumbItems} />
+          <Breadcrumb items={breadcrumbItems(postSelected?.slug || "")} />
 
           <S.Header>
-            <S.Tag>Desenvolvimento</S.Tag>
-            <S.Title>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              commodo dui nec dolor ut commodo dui nec ipsum
-            </S.Title>
+            <S.Tag>{postSelected?.status}</S.Tag>
+            <S.Title
+              children={undefined}
+              dangerouslySetInnerHTML={{
+                __html: postSelected?.title.rendered || "",
+              }}
+            />
 
             <S.ContainerUser>
               <S.Avatar
                 alt="Image avatar"
                 style={{ objectFit: "cover" }}
-                src={getImage("avatar").src}
+                src={
+                  postSelected?.details_author.avatar_urls[96] ||
+                  getImage("avatar").src
+                }
               />
               <S.AuthorInfo>
-                <S.Prefix>Por</S.Prefix>
-                <S.AuthorName>Luis henrique silva</S.AuthorName>
+                <S.Prefix>Por </S.Prefix>
+                <S.AuthorName>{postSelected?.details_author.name}</S.AuthorName>
                 <S.Dot />
-                <S.Date>5 de ago 2021</S.Date>
+                <S.Date>
+                  {formatDate(postSelected?.date || "", "D de MMM YYYY")}
+                </S.Date>
               </S.AuthorInfo>
             </S.ContainerUser>
           </S.Header>
-
-          <S.Banner alt="Image logo" src={getImage("avatarDetail").src} />
-          <S.Card>
-            <S.Text>
-              Você já ouviu falar na utilização de manual de atendimento ao
-              cliente na advocacia? É um documento que aborda os principais
-              pontos de dúvida do relacionamento do cliente com o advogado ou
-              escritório e que visa esclarecer, desde já, como esse
-              relacionamento irá funcionar.
-            </S.Text>
-          </S.Card>
-
-          <S.ContainerTexts>
-            {texts.map((item) => (
-              <S.ContainerText key={item.id}>
-                <S.Title>{item.title}</S.Title>
-                <div>
-                  {item.texts.map((text, index) => (
-                    <S.Text key={index}>{text}</S.Text>
-                  ))}
-                </div>
-              </S.ContainerText>
-            ))}
-            <S.List>
-              <S.Item>Lorem ipsum dolor sit amet</S.Item>
-              <S.Item>In mauris malesuada nisl laoreet</S.Item>
-              <S.Item>Lorem ipsum dolor </S.Item>
-              <S.Item>In mauris malesuada nisl</S.Item>
-              <S.Item>In mauris malesuada nisl laoreet</S.Item>
-            </S.List>
-          </S.ContainerTexts>
-          <S.Image alt="Image logo" src={getImage("abstract").src} />
-          <S.ContainerTexts>
-            {[...texts].splice(0, 2).map((item) => (
-              <S.ContainerText key={item.id}>
-                <S.Title>{item.title}</S.Title>
-                <div>
-                  {item.texts.map((text, index) => (
-                    <S.Text key={index}>{text}</S.Text>
-                  ))}
-                </div>
-              </S.ContainerText>
-            ))}
-          </S.ContainerTexts>
+          {postSelected && (
+            <div
+              className="ContainerText"
+              dangerouslySetInnerHTML={{
+                __html: postSelected.content.rendered,
+              }}
+            ></div>
+          )}
         </S.Content>
 
         <Sections.Footer />

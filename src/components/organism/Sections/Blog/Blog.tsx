@@ -77,7 +77,7 @@ export const Blog = () => {
       >
         {posts.map((item) => (
           <SwiperSlide key={item.id}>
-            <S.Card onClick={() => router.push(item.link)}>
+            <S.Card onClick={() => router.push(`/project/${item.id}`)}>
               <S.Image src={getImage("avatar").src} alt="Image avatar" />
 
               <S.ContentCard>
