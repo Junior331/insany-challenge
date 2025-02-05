@@ -10,6 +10,7 @@ import { topics, features, imagesCarousel } from "./utils";
 import { getImage, images } from "@/assets/images";
 
 export const Solutions = () => {
+  const balance = 999.9
   return (
     <S.Section id="Solutions">
       <S.Container>
@@ -48,7 +49,7 @@ export const Solutions = () => {
                 style: "currency",
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
-              }).format(999.9 || 0)}
+              }).format(balance || 0)}
               <S.Icon src={getIcons("barChart").src} alt="Icon bar chart" />
             </S.Title>
             <S.Text size={1.8}>Balançaço</S.Text>
