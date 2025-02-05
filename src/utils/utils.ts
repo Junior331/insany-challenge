@@ -30,3 +30,16 @@ export const maskCnpj = (value: string) => {
 
 export const maskPhone = (value: string) =>
   value.replace(/(\d{2})(\d{5})(\d{4})/g, "($1) $2-$3");
+
+export const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  const monthNames = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+  ];
+
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${month} ${year}`;
+};

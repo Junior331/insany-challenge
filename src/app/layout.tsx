@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 
 import Provider from "@/lib/provider";
 import { archivo } from "@/assets/fonts";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export const metadata: Metadata = {
   title: "Smart Money",

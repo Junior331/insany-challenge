@@ -1,23 +1,39 @@
 "use client";
 
 import { useFormik } from "formik";
+import { useContext, useState } from "react";
 
 import * as S from "./HeroStyled";
 import { schema } from "./schema";
+import { getLeads, postLeads } from "./services";
 import { getIcons } from "@/assets/icons";
 import { maskCnpj, maskPhone } from "@/utils/utils";
 import { bigNumbers, initialValues } from "./utils";
+import { SnackbarContext } from "@/contexts/snackbar";
 import { Header, NumberTicker } from "@/components/modules";
 import { Input, Radio, Text, Title } from "@/components/elements";
 
 export const Hero = () => {
+  const [loading, setLoading] = useState(false);
+  const { setSnackbar } = useContext(SnackbarContext);
+
   const formik = useFormik({
     initialValues: initialValues,
-    onSubmit: async (values) => {
-      console.log("values ::", values);
+    onSubmit: async (values, { resetForm }) => {
+      await postLeads({
+        values,
+        resetForm,
+        setLoading,
+        setSnackbar,
+      });
     },
     validationSchema: schema,
   });
+
+  const handleGetLeads = async () => {
+    const list = await getLeads();
+    console.log("leads ::", list.leads);
+  };
 
   const { values, errors, touched, handleSubmit, handleChange } = formik;
   return (
@@ -50,6 +66,9 @@ export const Hero = () => {
               ))}
             </S.ContainerBigNumbers>
           </S.ContentHero>
+          <S.SubmitButton onClick={handleGetLeads} size="100%">
+            Get leads
+          </S.SubmitButton>
         </S.Content>
 
         <S.ContainerForm>

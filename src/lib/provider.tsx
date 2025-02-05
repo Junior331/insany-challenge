@@ -3,8 +3,9 @@
 import { ThemeProvider } from "styled-components";
 
 import { theme } from "@/styles/theme";
-import StyledComponentsRegistry from "@/lib/registry";
+import { PostsProvider } from "@/contexts/posts";
 import { GlobalStyles } from "@/styles/globalStyled";
+import StyledComponentsRegistry from "@/lib/registry";
 import { SnackbarProvider } from "@/contexts/snackbar";
 
 export default function Provider({ children }: { children: React.ReactNode }) {
@@ -12,7 +13,9 @@ export default function Provider({ children }: { children: React.ReactNode }) {
     <StyledComponentsRegistry>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <SnackbarProvider>{children}</SnackbarProvider>
+        <PostsProvider>
+          <SnackbarProvider>{children}</SnackbarProvider>
+        </PostsProvider>
       </ThemeProvider>
     </StyledComponentsRegistry>
   );

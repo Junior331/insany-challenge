@@ -109,6 +109,7 @@ export const Card = styled.div`
   height: 100%;
   height: auto;
   display: flex;
+  cursor: pointer;
   max-width: 280px;
   overflow: hidden;
   flex-direction: column;
@@ -139,6 +140,7 @@ export const ImageAvatar = styled.img`
 `;
 
 export const TitleBlue = styled(Title)`
+  text-transform: capitalize;
   color: ${({ theme }) => theme.palette.color.brand.default};
 `;
 
