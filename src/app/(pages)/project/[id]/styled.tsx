@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 import { styledProps } from "@/utils/types";
-import { Title as TitleComponent } from "@/components/elements";
+import {
+  Text as TextComponent,
+  Title as TitleComponent,
+} from "@/components/elements";
 
 export const GenericContainer = styled.div`
   width: 100%;
@@ -38,52 +41,25 @@ export const Content = styled(GenericContainer)`
   padding: 0 75px;
   flex-direction: column;
 
-  .ContainerText {
-    gap: 18px;
+  figure {
     width: 100%;
-    height: auto;
-    display: flex;
-    margin: 0 auto;
-    margin-top: 68px;
+    height: 434px;
+    object-fit: fill;
+    margin: 64px auto;
     max-width: 1045px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 
-    div {
-      gap: 16px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    p {
-      color: #596573;
-      font-size: ${({ theme }) => theme.typography.fontSizeRegular}rem;
-    }
-    h2 {
-      color: #2c343e;
-      font-size: ${({ theme }) => theme.typography.fontSizeBold + 0.4}rem;
-    }
-    img,
-    figure {
+    > div {
       width: 100%;
-      height: 434px;
-      margin: 64px auto;
-      object-fit: fill;
-      max-width: 1045px;
-
-      > div {
+      height: 100%;
+      > iframe {
         width: 100%;
         height: 100%;
-        > iframe {
-          width: 100%;
-          height: 100%;
-        }
+        border-radius: 6px;
       }
+    }
 
-      @media (max-width: 1173px) {
-        object-fit: cover;
-      }
+    @media (max-width: 1173px) {
+      object-fit: cover;
     }
   }
 
@@ -107,6 +83,12 @@ export const Title = styled(TitleComponent)<styledProps>`
   color: #2c343e;
   font-size: ${({ size, theme }) =>
     size || theme.typography.fontSizeBold + 0.4}rem;
+
+  strong {
+    color: #2c343e;
+    font-weight: ${({ theme }) => theme.typography.fontWeightBold};
+    font-size: ${({ theme }) => theme.typography.fontSizeBold + 0.4}rem;
+  }
 `;
 
 export const Avatar = styled.img`
@@ -169,4 +151,94 @@ export const Dot = styled.span`
 
 export const Date = styled.span`
   color: #596573;
+`;
+
+export const Banner = styled.img`
+  width: 100%;
+  height: 434px;
+  margin: 68px auto;
+  object-fit: fill;
+  max-width: 1008px;
+  @media (max-width: 1173px) {
+    object-fit: cover;
+  }
+`;
+
+export const Image = styled(Banner)`
+  height: 284px;
+  max-width: 800px;
+  margin: 64px auto;
+  @media (max-width: 1173px) {
+    object-fit: cover;
+  }
+`;
+
+export const Text = styled(TextComponent)<styledProps>`
+  width: 100%;
+  color: #596573;
+  font-size: ${({ size, theme }) =>
+    size || theme.typography.fontSizeRegular}rem;
+`;
+
+export const Card = styled(GenericContainer)`
+  max-width: 800px;
+  padding: 32px 40px;
+  border-radius: 6px;
+  margin: 0 auto 24px;
+  background: rgba(196, 201, 207, 0.2);
+`;
+
+export const ContainerTexts = styled(GenericContainer)`
+  gap: 16px;
+  max-width: 800px;
+  margin: 20px auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const ContainerText = styled(GenericContainer)`
+  gap: 18px;
+  max-width: 800px;
+  flex-direction: column;
+
+  div {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const List = styled.ul`
+  gap: 34px;
+  width: 100%;
+  display: flex;
+  max-width: 765px;
+  flex-direction: column;
+`;
+
+export const Item = styled.li``;
+
+export const Containerload = styled(GenericContainer)`
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000096;
+`;
+
+export const Message = styled(Title)`
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  color: #ccd0d5;
+  max-width: 480px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: -webkit-fill-available;
 `;

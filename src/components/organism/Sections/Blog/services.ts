@@ -1,37 +1,42 @@
 import { Post } from "@/contexts/posts";
+import { savePostsInCookie } from "@/services/services";
 
-export const getPosts = async () => {
+export const getPosts = async (): Promise<Post[]> => {
   try {
-    const response = (await fetch(
+    const response = await fetch(
       "https://devblog.insanydesign.com/wp-json/wp/v2/posts/"
-    )) as any;
-    const result = await response.json();
+    );
+    if (!response.ok) throw new Error("Falha ao buscar posts");
 
-    const postsWithAuthorDetails = await Promise.all(
-      result.map(async (item: any) => {
-        const authorUrl = item._links.author?.[0]?.href;
-        let details_author = null;
+    const posts = await response.json();
 
-        if (authorUrl) {
-          try {
-            const authorResponse = await fetch(authorUrl);
-            if (authorResponse.ok) {
-              details_author = await authorResponse.json();
-            }
-          } catch (error) {
-            console.error(
-              `Erro ao buscar detalhes do autor para ${authorUrl}:`,
-              error
-            );
-          }
-        }
+    const fetchResource = async (url?: string) => {
+      if (!url) return null;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`Erro ao buscar recurso: ${url}`);
+        return await res.json();
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+    };
 
-        return { ...item, details_author };
+    const enhancedPosts = await Promise.all(
+      posts.map(async (post: any) => {
+        const [details_author, media] = await Promise.all([
+          fetchResource(post._links.author?.[0]?.href),
+          fetchResource(post._links["wp:featuredmedia"]?.[0]?.href),
+        ]);
+
+        return { ...post, details_author, media };
       })
     );
 
-    return postsWithAuthorDetails as Post[];
+    await savePostsInCookie(enhancedPosts);
+    return enhancedPosts;
   } catch (error) {
-    console.error("Um error aconteceu:", error);
+    console.error("Erro ao buscar posts:", error);
+    return [];
   }
 };

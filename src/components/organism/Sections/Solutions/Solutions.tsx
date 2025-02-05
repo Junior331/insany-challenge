@@ -1,10 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-import { getIcons } from "@/assets/icons";
 import * as S from "./SolutionsStyled";
-import { topics, features } from "./utils";
-import { getImage } from "@/assets/images";
-import { useEffect } from "react";
+import { getIcons } from "@/assets/icons";
+import { formatter } from "@/utils/utils";
+import { topics, features, imagesCarousel } from "./utils";
+import { getImage, images } from "@/assets/images";
 
 export const Solutions = () => {
   return (
@@ -39,25 +42,54 @@ export const Solutions = () => {
         <S.ContainerCards>
           <S.CardBalance>
             <S.Title size={2.4}>
-              R$ 999,90
+              {formatter({
+                type: "pt-BR",
+                currency: "BRL",
+                style: "currency",
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              }).format(999.9 || 0)}
               <S.Icon src={getIcons("barChart").src} alt="Icon bar chart" />
             </S.Title>
             <S.Text size={1.8}>Balançaço</S.Text>
             <S.Divider />
             <S.AvatarGroup>
               {[1, 2, 3, 4].map((i) => (
-                <img key={i} alt={`User ${i}`} src={getImage("avatar").src} />
+                <img
+                  key={i}
+                  alt={`User ${i}`}
+                  src={images[`avatar0${i}` as keyof typeof images].src}
+                />
               ))}
             </S.AvatarGroup>
           </S.CardBalance>
           <S.ContainerCard>
-            <S.Icon src={getIcons("menu").src} alt="Icon menu" />
+            <S.Pagination className="pagination_images" />
+            <Swiper
+              loop
+              modules={[Navigation, Pagination, Autoplay]}
+              spaceBetween={16}
+              slidesPerView={1}
+              pagination={{
+                clickable: false,
+                el: ".pagination_images",
+              }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+              }}
+            >
+              {imagesCarousel.map((item) => (
+                <SwiperSlide className="SwiperSlide" key={item.id}>
+                  <S.Image
+                    loading="lazy"
+                    alt="Image avatar"
+                    src={item.img || getImage("fallback").src}
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
 
-            <S.Image
-              loading="lazy"
-              alt="Image avatar"
-              src={getImage("avatar").src}
-            />
             <S.Circles
               loading="lazy"
               src={getImage("circles").src}

@@ -1,3 +1,5 @@
+import { formatterProps } from "./types";
+
 export const getCurrentDate = (): string => {
   const now = new Date();
   const day = String(now.getDate()).padStart(2, "0");
@@ -17,6 +19,21 @@ export const formatNumberBR = (num: number): string => {
   if (num >= 1e6) return `${Math.floor(num / 1e6)} mi`;
   if (num >= 1e3) return `${Math.floor(num / 1e3)} mil`;
   return num.toString();
+};
+
+export const formatter = ({
+  type = "en-US",
+  currency = "USD",
+  style = "decimal",
+  minimumFractionDigits,
+  maximumFractionDigits,
+}: formatterProps) => {
+  return new Intl.NumberFormat(type, {
+    style,
+    currency,
+    minimumFractionDigits,
+    maximumFractionDigits,
+  });
 };
 
 export const maskCnpj = (value: string) => {

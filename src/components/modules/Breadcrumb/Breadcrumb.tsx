@@ -62,7 +62,7 @@ export const Breadcrumb = ({ items }: props) => {
           const isLast = index === items.length - 1;
 
           return (
-            <div key={item.href} className="flex items-center">
+            <div key={item.href} className="links">
               {index > 0 && <S.Separator>/</S.Separator>}
               {isLast ? (
                 <S.CurrentPage>{item.label}</S.CurrentPage>

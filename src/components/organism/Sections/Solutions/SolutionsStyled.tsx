@@ -7,6 +7,7 @@ import {
 } from "@/components/elements";
 import { getImage } from "@/assets/images";
 import { styledProps } from "@/utils/types";
+import { Pagination as PaginationComponent } from "../Blog/BlogStyled";
 
 export const GenericContainer = styled.div`
   width: 100%;
@@ -110,6 +111,7 @@ export const FeaturesGrid = styled.div`
     grid-template-columns: 1fr;
   }
 `;
+
 export const FeatureCard = styled.div`
   text-align: start;
   @media (max-width: 580px) {
@@ -195,6 +197,10 @@ export const ContainerCard = styled(GenericContainer)`
       rgba(29, 99, 255, 0) 126.66%
     );
   }
+
+  .swiper-wrapper {
+    margin-left: 32px;
+  }
 `;
 
 export const CardBalance = styled(GenericContainer)`
@@ -258,8 +264,13 @@ export const AvatarGroup = styled.div`
 `;
 
 export const Image = styled.img`
+  width: 100%;
+  height: 100%;
   min-width: 434px;
+  max-width: 434px;
   min-height: 544px;
+  max-height: 544px;
+  object-fit: cover;
   border-radius: 6px;
   background-color: #f2f5fc;
 `;
@@ -268,4 +279,30 @@ export const Circles = styled.img`
   right: 30px;
   bottom: 20px;
   position: absolute;
+`;
+
+export const Pagination = styled(PaginationComponent)`
+  gap: 5px;
+  z-index: 30;
+  display: flex;
+  margin-top: 0;
+  position: relative;
+  justify-content: flex-end;
+
+  .swiper-pagination-bullet {
+    margin: 0;
+    opacity: 1;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s;
+    background: #fff;
+    border: 1px solid #fff;
+    
+    &-active {
+      background: #1d63ff;
+      border: 1px solid #1d63ff;
+    }
+  }
 `;

@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <head>
         <link rel="icon" href="/logo.svg" sizes="any" />
       </head>
-      <body className={`${archivo.className}`}>
+      <body className={`${archivo.variable}`}>
         <Provider>{children}</Provider>
       </body>
     </html>

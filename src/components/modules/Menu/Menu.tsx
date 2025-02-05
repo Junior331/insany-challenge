@@ -123,7 +123,7 @@ export const Menu = ({ isMenuOpen, setIsMenuOpen }: props) => {
           {routes.map((navItem) => (
             <S.MotionLi key={navItem.id} whileTap={{ scale: 0.95 }}>
               <motion.div variants={liVariant}>
-                <S.Link>{navItem.label}</S.Link>
+                <S.Link href={navItem.path}>{navItem.label}</S.Link>
               </motion.div>
             </S.MotionLi>
           ))}

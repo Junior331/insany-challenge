@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { emptyPost } from "@/utils/emptys";
 import { ReactNode, createContext, useMemo, useState } from "react";
 
@@ -43,6 +44,13 @@ export interface Post {
         }
       ];
     };
+  };
+  media: {
+    id: number;
+    date: string;
+    source_url: string;
+    title: { rendered: string };
+    description: { rendered: string };
   };
   categories: number[];
   class_list: string[];

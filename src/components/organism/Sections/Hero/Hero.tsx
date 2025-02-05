@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 
 import * as S from "./HeroStyled";
 import { schema } from "./schema";
-import { getLeads, postLeads } from "./services";
+import { postLeads } from "./services";
 import { getIcons } from "@/assets/icons";
 import { maskCnpj, maskPhone } from "@/utils/utils";
 import { bigNumbers, initialValues } from "./utils";
@@ -30,10 +30,10 @@ export const Hero = () => {
     validationSchema: schema,
   });
 
-  const handleGetLeads = async () => {
-    const list = await getLeads();
-    console.log("leads ::", list.leads);
-  };
+  // const handleGetLeads = async () => {
+  //   const list = await getLeads();
+  //   console.log("leads ::", list.leads);
+  // };
 
   const { values, errors, touched, handleSubmit, handleChange } = formik;
   return (
@@ -66,9 +66,9 @@ export const Hero = () => {
               ))}
             </S.ContainerBigNumbers>
           </S.ContentHero>
-          <S.SubmitButton onClick={handleGetLeads} size="100%">
+          {/* <S.SubmitButton onClick={handleGetLeads} size="100%">
             Get leads
-          </S.SubmitButton>
+          </S.SubmitButton> */}
         </S.Content>
 
         <S.ContainerForm>
@@ -137,7 +137,12 @@ export const Hero = () => {
               error={touched.phone && Boolean(errors.phone)}
             />
 
-            <S.SubmitButton type="submit" size="100%">
+            <S.SubmitButton
+              size="100%"
+              type="submit"
+              loading={loading}
+              disabled={loading}
+            >
               Quero ser cliente
             </S.SubmitButton>
 

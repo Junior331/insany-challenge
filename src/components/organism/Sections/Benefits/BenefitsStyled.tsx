@@ -139,9 +139,21 @@ export const ContainerTechnologies = styled(GenericContainer)`
   }
 `;
 
-export const ContainerCards = styled(GenericContainer)`
+export const ContainerCards = styled(GenericContainer)<{ scale?: number }>`
   gap: 29px;
   width: auto;
+  @media (max-width: 600px) {
+    transform: scale(0.9);
+  }
+  @media (max-width: 530px) {
+    transform: scale(0.8);
+  }
+  @media (max-width: 470px) {
+    transform: scale(0.65);
+  }
+  @media (max-width: 386px) {
+    transform: scale(0.5);
+  }
 `;
 
 export const ContainerCard = styled(GenericContainer)<styledProps>`

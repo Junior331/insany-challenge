@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import Link from "next/link";
 import { Menu } from "../Menu";
 import { routes } from "./utils";
 import * as S from "./HeaderStyled";
@@ -13,13 +14,15 @@ export const Header = () => {
 
   return (
     <S.Container>
-      <S.ContainerLogo>
-        <S.Image alt="Image logo" src={getImage("logo").src} />
-        <S.ContainerText>
-          <Text>Smart</Text>
-          <Title>Money</Title>
-        </S.ContainerText>
-      </S.ContainerLogo>
+      <Link href="/">
+        <S.ContainerLogo>
+          <S.Image alt="Image logo" src={getImage("logo").src} />
+          <S.ContainerText>
+            <Text>Smart</Text>
+            <Title>Money</Title>
+          </S.ContainerText>
+        </S.ContainerLogo>
+      </Link>
 
       <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 

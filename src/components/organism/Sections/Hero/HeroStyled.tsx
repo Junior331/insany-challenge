@@ -7,6 +7,7 @@ import {
 } from "@/components/elements";
 import { getImage } from "@/assets/images";
 import { styledProps } from "@/utils/types";
+import { motion } from "framer-motion";
 
 export const GenericContainer = styled.div`
   width: 100%;
@@ -195,4 +196,22 @@ export const SecurityIndicator = styled.div`
   justify-content: start;
   font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
   color: ${({ theme }) => theme.palette.color.neutrals.dark.dark_100};
+`;
+
+
+export const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+export const Circle = styled(motion.div)`
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+  display: inline-block;
 `;

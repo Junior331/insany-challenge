@@ -54,7 +54,7 @@ export const Benefits = () => {
           <a href="#Hero">
             <S.Button size="100%">Quero ser cliente</S.Button>
           </a>
-          <S.ContainerCards>
+          <S.ContainerCards >
             <S.ContainerCard $isSecondary>
               <S.Image
                 loading="lazy"

@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     font-style: normal;
     box-sizing: border-box;
     font-optical-sizing: auto;
+    font-family: 'Archivo', sans-serif;
     font-weight: ${({ theme }) => theme.typography.fontWeightLight};
 
     &::-webkit-scrollbar {

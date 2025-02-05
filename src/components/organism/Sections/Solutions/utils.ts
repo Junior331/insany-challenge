@@ -1,4 +1,5 @@
 import { getIcons } from "@/assets/icons";
+import { getImage } from "@/assets/images";
 
 export const topics = [
   {
@@ -42,5 +43,20 @@ export const features = [
     icon: getIcons("chart").src,
     title: "Evolução constante ",
     label: "Commodo egestas dolor, sapien nam posuere at. Ultrices dictum cras vel gravida gravida vehicula ",
+  },
+];
+
+export const imagesCarousel = [
+  {
+    id: 1,
+    img: getImage("avatar").src,
+  },
+  {
+    id: 2,
+    img: getImage("avatarTechnologies").src,
+  },
+  {
+    id: 3,
+    img: getImage("avatarDetail").src,
   },
 ];

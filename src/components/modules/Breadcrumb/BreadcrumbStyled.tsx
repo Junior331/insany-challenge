@@ -10,14 +10,13 @@ export const BreadcrumbContainer = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: 1500px) {
-    max-width: 46.3%;
-  }
-
   @media (max-width: 1173px) {
     max-width: 100%;
     padding: 12px 0px;
     justify-content: flex-start;
+  }
+  @media (max-width: 768px) {
+    max-width: 50%;
   }
 `;
 
@@ -34,6 +33,14 @@ export const BreadcrumbList = styled.div`
   gap: 8px;
   display: flex;
   align-items: center;
+
+  .links {
+    max-width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 export const BreadcrumbItem = styled(Link)`
@@ -57,7 +64,7 @@ export const CurrentPage = styled.span`
   color: ${({ theme }) => theme.palette.color.brand.dark};
   font-size: ${({ theme }) => theme.typography.fontSizeMedium}rem;
 
-  @media (max-width: 1173px) {
-    max-width: 50%;
+  @media (max-width: 768px) {
+    max-width: 80%;
   }
 `;

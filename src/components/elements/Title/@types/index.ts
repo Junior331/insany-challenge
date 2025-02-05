@@ -1,5 +1,5 @@
 import { HTMLAttributes, ReactNode } from "react";
 
 export type TitleProps = {
-  children: ReactNode;
+  children?: ReactNode;
 }& HTMLAttributes<HTMLElement>;

@@ -1,7 +1,7 @@
 "use client";
 
-import { useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { useContext, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -11,18 +11,32 @@ import { getIcons } from "@/assets/icons";
 import { getImage } from "@/assets/images";
 import { formatDate } from "@/utils/utils";
 import { PostsContext } from "@/contexts/posts";
+import { getInfoCookie } from "@/utils/sessionCookies";
 
 export const Blog = () => {
   const router = useRouter();
   const { posts, setPosts } = useContext(PostsContext);
 
   const listAllPosts = async () => {
+    const cachedPosts = await getInfoCookie({ name: "cachedPosts" });
+
+    if (cachedPosts) {
+      try {
+        const parsedPosts = JSON.parse(cachedPosts);
+        setPosts(parsedPosts);
+        return;
+      } catch (error) {
+        console.error("Erro ao parsear os posts do cookie:", error);
+      }
+    }
+
     const response = await getPosts();
     setPosts(response || []);
   };
 
   useEffect(() => {
     listAllPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -78,7 +92,10 @@ export const Blog = () => {
         {posts.map((item) => (
           <SwiperSlide key={item.id}>
             <S.Card onClick={() => router.push(`/project/${item.id}`)}>
-              <S.Image src={getImage("avatar").src} alt="Image avatar" />
+              <S.Image
+                src={item?.media?.source_url || getImage("fallback").src}
+                alt="Image avatar"
+              />
 
               <S.ContentCard>
                 <S.HeaderCard>

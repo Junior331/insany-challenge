@@ -97,11 +97,6 @@ export const getLeads = async () => {
 
     const result = await response.json();
 
-    if (response.ok) {
-      console.log("response ::", response);
-    } else {
-      console.log("response ::", response);
-    }
     return result;
   } catch (error) {
     console.error("Erro ao enviar lead:", error);

@@ -156,5 +156,13 @@ export const emptyPost: Post[] = [
         ],
       },
     },
+
+    media: {
+      id: 0,
+      date: "",
+      source_url: "",
+      title: { rendered: "" },
+      description: { rendered: "" },
+    },
   },
 ];

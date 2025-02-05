@@ -11,6 +11,7 @@ export const Button = styled.button<StyledButtonProps>`
   justify-content: center;
   transition: 0.2s color ease;
   width: ${({ size }) => size || "max-content"};
+  filter: contrast(${({ disabled }) => (disabled ? 0.4 : 1)});
   color: ${({ theme }) => theme.palette.color.auxiliary.white};
   cursor: ${({ disabled }) => (disabled ? "no-drop" : "pointer")};
   font-size: ${({ theme }) => theme.typography.fontSize - 0.2}rem;

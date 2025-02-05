@@ -33,13 +33,13 @@ yarn dev
 
 - [x] Criar estrutura inicial do projeto
 - [x] Implementação de Theme e Style
-- [ ] Criar componentes
-- [ ] Criar telas
+- [X] Criar componentes
+- [X] Criar telas
 
   ### Pages
 
-     - [ ] Home
-     - [ ] Details
+     - [X] Home
+     - [X] Details
 
   ### Components
 
@@ -113,19 +113,24 @@ yarn dev
     │   │   │   │   ├── Menu
     │   │   │   │   ├── Header
     │   │   │   │   ├── Snackbar
+    │   │   │   │   ├── Breadcrumb
     │   │   │   │   ├── NumberTicker
     │   │   │   │   └── index.ts
     │   │   │   ├── organism/
     │   │   │   │   ├── Layout
     │   │   │   │   ├── Sections/
-    │   │   │   │   │   ├── FAQ/
+    │   │   │   │   │   ├── Blog
+    │   │   │   │   │   ├── FAQ
     │   │   │   │   │   ├── Hero
     │   │   │   │   │   ├── Footer
+    │   │   │   │   │   ├── Contact
+    │   │   │   │   │   ├── Benefits
     │   │   │   │   │   ├── Solutions
     │   │   │   │   │   └── index.ts
     │   │   │   │   └── index.ts
     │   │   ├── hooks/
     │   │   ├── contexts/
+    │   │   │   ├── posts.tsx
     │   │   │   └── snackbar.tsx
     │   │   ├── lib/
     │   │   │   ├── provider.tsx
@@ -134,9 +139,17 @@ yarn dev
     │   │   │   ├── mocks/
     │   │   │   │   └── index.ts
     │   │   │   └── services.ts
-    │   │   ├── pages/
-    │   │   │   ├── Home
-    │   │   │   └── Details
+    │   │   ├── (pages)/
+    │   │   │   ├── api/
+    │   │   │   │   └── leads/
+    │   │   │   │       └── route.ts
+    │   │   │   └── project/[id]
+    │   │   │   │   ├── @types
+    │   │   │   │   ├── index.ts
+    │   │   │   │   ├── page.tsx
+    │   │   │   │   ├── services.ts
+    │   │   │   │   ├── styled.tsx
+    │   │   │   │   └── utils.ts
     │   │   ├── utils/
     │   │   │   ├── utils.ts
     │   │   │   ├── types.ts
