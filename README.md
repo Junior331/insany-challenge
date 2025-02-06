@@ -46,7 +46,7 @@ yarn dev
   ## Elements
 
      - [X] Text  
-     - [ ] Load  
+     - [X] Load  
      - [X] Input 
      - [X] Title 
      - [X] Radio
